@@ -16,7 +16,7 @@ class Trainer:
             self.model.cuda()
         tokenizer = BertTokenizer.from_pretrained(BERT_MODEL)
         self.train_dataset = CoLADataset(TRAIN_PATH, tokenizer)
-        self.val_dataste = CoLADataset(VAL_PATH, tokenizer)
+        self.val_dataset = CoLADataset(VAL_PATH, tokenizer)
         self.loss = nn.BCEWithLogitsLoss()
 
     def configure_optimizer(self):
