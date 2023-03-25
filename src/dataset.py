@@ -5,13 +5,14 @@ from transformers import AutoTokenizer
 
 
 class CoLADataset(Dataset):
+
     def __init__(self, path: str, tokenizer: AutoTokenizer):
         super().__init__()
         # Read in only label and sentence
         self.data = pd.read_csv(
             path,
             sep="\t",
-            names=["x","label","y","sentence"],
+            names=["x", "label", "y", "sentence"],
             header=None,
         )[["label", "sentence"]]
 

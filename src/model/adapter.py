@@ -3,7 +3,9 @@ import torch.nn.functional as F
 # TODO: switch to yaml config
 from config import *
 
+
 class AdapterModule(nn.Module):
+
     def __init__(self, in_features: int):
         super().__init__()
         # Adapter first projects into a smaller dimension
